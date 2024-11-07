@@ -29,6 +29,23 @@ public class Tamagotchi {
         }
     }
 
+    public void play() {
+        if (energy > 10) {
+            happiness += 10;
+            energy -= 10;
+            System.out.println(name + " is playing.");
+        } else {
+            System.out.println(name + " needs to sleep.");
+        }
+    }
+
+    public void sleep() {
+        energy = 50;
+        age += 1;
+        hunger += 5;
+        System.out.println(hunger + " has slept and feels rested.");
+    }
+
     public void logInfo() {
         if(isAlive) {
             System.out.println(name + " " + type.toString() + " happiness: " + happiness + " age: " + age + " hunger: " + hunger + " energy: " + energy);
