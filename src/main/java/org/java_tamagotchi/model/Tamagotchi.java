@@ -7,6 +7,7 @@ public class Tamagotchi {
     private final int hunger;
     private final int happiness;
     private final int energy;
+    private final boolean isAlive;
 
     public Tamagotchi(String name, TamagotchiType type) {
         this.name = name;
@@ -15,9 +16,14 @@ public class Tamagotchi {
         this.hunger = 100;
         this.happiness = 0;
         this.energy = 100;
+        this.isAlive = true;
     }
 
     public void logInfo() {
-        System.out.println(name + " " + type.toString() + " " + happiness + " " + health + " " + hunger + " " + energy);
+        if(isAlive) {
+            System.out.println(name + " " + type.toString() + " happiness: " + happiness + " health: " + health + " hunger: " + hunger + " energy: " + energy);
+        } else {
+            System.out.println(name + " is no longer with us.");
+        }
     }
 }
