@@ -3,11 +3,11 @@ package org.java_tamagotchi.model;
 public class Tamagotchi {
     private final String name;
     private final TamagotchiType type;
-    private final int age;
-    private final int hunger;
-    private final int happiness;
-    private final int energy;
-    private final boolean isAlive;
+    private int age;
+    private int hunger;
+    private int happiness;
+    private int energy;
+    private boolean isAlive;
 
     public Tamagotchi(String name, TamagotchiType type) {
         this.name = name;
@@ -17,6 +17,16 @@ public class Tamagotchi {
         this.happiness = 0;
         this.energy = 50;
         this.isAlive = true;
+    }
+
+    public void feed() {
+        if(hunger > 10) {
+            hunger -= 10;
+            energy += 5;
+            System.out.println(name + " has been feed.");
+        } else {
+            System.out.println(name + " is full.");
+        }
     }
 
     public void logInfo() {
